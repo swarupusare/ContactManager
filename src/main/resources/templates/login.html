@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+    <head>
+        <title>Login here</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body>
+
+                    <section>
+                        <div id="logreg-forms">
+                            <form  th:action="@{/login}" method="post"  class="form-signin">
+                                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+                                <div  class="text-center pb-2 alert alert-danger di-lo"  th:if="${param.error}">
+                                    Invalid username and password.
+                                </div>
+                                <div class="text-center alert alert-success di-lo" th:if="${param.logout}">
+                                    You have been logged out.
+                                </div>
+                                <div class="social-login">
+                                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
+<!--                                    <button class="btn google-btn social-btn g-signin2" data-onsuccess="onSignIn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>-->
+                                     <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+                                </div>
+                                <p style="text-align:center"> OR  </p>
+                                <input type="email" id="inputEmail" name="username" class="form-control" placeholder="Email address" required="" autofocus="">
+                                    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
+
+                                        <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+                                        <a href="#" id="forgot_pswd">Forgot password?</a>
+                                        <hr>
+                                            <!-- <p>Don't have an account!</p>  -->
+                                            <a class="btn btn-primary btn-block" th:href="@{/signup}" style="color: #fff" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</a>
+                                            </form>
+
+                                            <!--                                            <form action="/reset/password/" class="form-reset">
+                                                                                            <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                                                                                                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                                                                                                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+                                                                                        </form>
+                                            
+                                                                                        <form action="/signup/" class="form-signup">
+                                                                                            <div class="social-login">
+                                                                                                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+                                                                                            </div>
+                                                                                            <div class="social-login">
+                                                                                                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+                                                                                            </div>
+                                            
+                                                                                            <p style="text-align:center">OR</p>
+                                            
+                                                                                            <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+                                                                                                <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+                                                                                                    <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+                                                                                                        <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+                                            
+                                                                                                            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+                                                                                                            <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+                                                                                                            </form>-->
+                                            <br>
+
+                                                </div>
+<!--                                                <script>
+
+                                                    function onSignIn(googleUser) {
+                                                        var profile = googleUser.getBasicProfile();
+                                                        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                                                       
+                                                        console.log('Name: ' + profile.getName());
+                                                        var ns=profile.getName().replace(/\s+/g,'');
+                                                        var s2=ns.replace(/\s+/g,'');
+                                                        console.log('Name whi :'+ ns);
+                                                         console.log('secondName whi :'+ s2);
+                                                        
+                                                        console.log('Image URL: ' + profile.getImageUrl());
+                                                        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                                                        var path="/googleuser/dashboard/"+ns+"/"+profile.getEmail();
+                                                        window.location =path;
+                                                    }
+                                                </script>-->
+
+
+                                                </section>
+                                                </body>
+                                                </html>

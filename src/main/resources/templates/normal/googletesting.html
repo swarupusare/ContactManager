@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-signin-client_id" content="317783880617-rp9sf10s4j0lvgtrl6qadpp399e487ai.apps.googleusercontent.com">
+        
+        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div th:object="${user}">
+                <h2>Welcome Google  User <span th:text="${user.name}"></span> ..................</h2>
+                <h3 style="color: red" th:text="${user.email}"></h3>
+                <h3 style="color: red" th:text="${user.about}"></h3>
+        </div>
+    
+      
+    </body>
+</html>

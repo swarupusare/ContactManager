@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" th:replace="normal/userbase::Layout(~{::section})">
+    <head>
+        <title>smart-contact-manager</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body>
+
+                    <section>
+                        <div class="card mar">
+                            <div class="card-body">
+                                <div style="font-size: 22px" th:if="${msg}" class="alert alert-success text-center">
+                                    <p th:text="${msg.content}"></p>
+                                 
+                                </div>
+                                <h1 class="text-center">Add Contact</h1>
+                                <div class="container-fluid ">
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1">
+                                            <form class="mt-2" action="" th:action="@{/user/contact_process}" enctype="multipart/form-data" method="post">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text"><i class="fa fa-plus"></i></div>
+                                                    </div>
+                                                    <input type="text" name="name" class="form-control" id="inputname" placeholder="Enter Name here..."  required=""/>
+                                                </div>
+                                                <div class="input-group mt-3">
+
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text"><i class="fas fa-user-alt"></i></div>
+                                                    </div>
+                                                    <input a type="text" name="secondName" class="form-control" id="inputsecondname" placeholder="Enter Your Nick Name..."  />
+                                                </div>
+                                                <div class="input-group mt-3">
+
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text"><i class="fa fa-briefcase"></i></div>
+                                                    </div>
+                                                    <input type="text" name="work" class="form-control" id="inputwork" placeholder="work..." />
+                                                </div>
+                                                <div class="input-group mt-3">
+
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">@</div>
+                                                    </div>
+                                                    <input type="email" name="email" class="form-control" id="inputemail" placeholder="Email ID..." />
+                                                </div>
+                                                <div class="input-group mt-3">
+
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text"><i class="fa fa-phone"></i></div>
+                                                    </div>
+                                                    <input type="number" name="phone" class="form-control" id="inputphone" placeholder="Mobile No..." required="" />
+                                                </div>
+                                                <textarea id="mytextarea" rows="14" name="description" class="form-control mt-3" cols="60" placeholder="Enter About here..." ></textarea>
+                                                <div class="custom-file mt-3">
+                                                    <input type="file" name="profilename" class="form-control"  />
+                                                </div>
+                                                <div class="text-center mt-3">
+                                                    <button type="submit" class="btn btn-outline-primary" > Save Contact</button>
+                                                </div>
+
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+                        <script>
+                            tinymce.init({
+                                selector: '#mytextarea'
+                            });
+                        </script>
+
+
+                    </section>
+                </body>
+                </html>

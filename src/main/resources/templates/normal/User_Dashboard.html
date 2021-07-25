@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" th:replace="normal/userbase::Layout(~{::section})">
+    <head>
+        <title>smart-contact-manager</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body>
+
+                    <section>
+                        <h3>Hello</h3>
+                        <div class="text-center" style="display: flex;flex-direction: column;align-items: center" th:object="${user}">
+                            <h4>this is User Dashboard </h4>
+                            <h4>user name is :<span th:text="${user.name}" ></span> </h4>
+                            <h4>user Email is :<span th:text="${user.email}" ></span> </h4>
+                            <h4>user role is :<span th:text="${user.role}" ></span> </h4>
+                            <h4>About is :<span th:text="${user.about}" ></span> </h4>
+                            <div class="text-center mt-4" style="border: none ;width: 800px;height: 200px;background-color: #99ffff">
+                                <form class="form-group mt-4" th:action="@{/user/makepayment}" method="GET" id="formpayment">
+                                    <h4 class="mb-3">Payment Here!!!</h4>
+                                    <input type="text" style="width: 100%;max-width: 600px;margin-left: 85px " class="form-control " id="amountField" name="amount" placeholder="Enter Amout..." />
+                                    <button type="submit"  class="btn btn-outline-primary mt-3" > Pay Amount </button>
+                                </form>        
+                            </div>
+
+
+
+
+                        </div>
+
+                    </section>
+                </body>
+                </html>
